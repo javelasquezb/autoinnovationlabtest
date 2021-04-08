@@ -1,5 +1,7 @@
 using autoinnovationlabtest.Common.Services;
+using autoinnovationlabtest.Common.Services.Brands;
 using autoinnovationlabtest.Common.Services.Cars;
+using autoinnovationlabtest.Web.Helpers;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -31,6 +33,10 @@ namespace autoinnovationlabtest.Web
             //Services
             services.AddScoped<IApiService,ApiService>();
             services.AddScoped<ICarService,CarService>();
+            services.AddScoped<IBrandService,BrandService>();
+
+            //Helpers
+            services.AddScoped<IComboHelper,ComboHelper>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

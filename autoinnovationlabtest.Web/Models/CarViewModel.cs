@@ -1,4 +1,6 @@
-﻿using System.ComponentModel;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace autoinnovationlabtest.Web.Models
 {
@@ -14,5 +16,9 @@ namespace autoinnovationlabtest.Web.Models
         public string Year { get; set; }
         [DisplayName("Marca")]
         public string Brand { get; set; }
+        [DisplayName("Marcas")]
+        public IEnumerable<SelectListItem> Brands { get; set; }
+        public int BrandId { get; set; }
+
     }
 }
