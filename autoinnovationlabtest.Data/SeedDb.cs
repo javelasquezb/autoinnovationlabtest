@@ -7,21 +7,38 @@ using System.Threading.Tasks;
 
 namespace autoinnovationlabtest.Data
 {
+    /// <summary>
+    /// Nombre de la clase: SeedDb
+    /// Clase para guardar datos de prueba en la base de datos
+    /// </summary>
     public class SeedDb
     {
+        //Variable para operar con la base de datos
         private readonly DataContext _context;
 
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="context">Objeto de tipo DataContext</param>
         public SeedDb(DataContext context)
         {
             _context = context;
         }
 
+        /// <summary>
+        /// Metodo para insertar todos los datos de prueba en la base de datos
+        /// </summary>
+        /// <returns></returns>
         public async Task SeedAsync()
         {
             await CreateBrandAsync();
             await CreateCarsAsync();
         }
 
+        /// <summary>
+        /// Metodo para insertar los datos de prueba en la tabla Cars
+        /// </summary>
+        /// <returns></returns>
         private async Task CreateCarsAsync()
         {
             if (!await _context.Cars.AnyAsync())
@@ -78,6 +95,10 @@ namespace autoinnovationlabtest.Data
             }
         }
 
+        /// <summary>
+        /// Metodo para insertar todos los datos de prueba en la tabla Brands
+        /// </summary>
+        /// <returns></returns>
         private async Task CreateBrandAsync()
         {
             if(!await _context.Brands.AnyAsync())

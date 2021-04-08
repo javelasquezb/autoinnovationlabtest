@@ -18,7 +18,7 @@ namespace autoinnovationlabtest.Common.Services.Cars
         /// <summary>
         /// Firma de metodo para consultar un registro con toda la informacion
         /// </summary>
-        /// <param name="car">Objeto de tipo Common.Models.Car</param>
+        /// <param name="car">Objeto de tipo Common.Models.Car con el id a consultar</param>
         /// <returns>Objeto de tipo Response</returns>
         Task<Response> GetAllInformation(Car car);
     }

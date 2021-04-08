@@ -1,4 +1,5 @@
-﻿var carTable = $('#CarsTable').DataTable({
+﻿//Inicializacion del Data Table
+var carTable = $('#CarsTable').DataTable({
     "ordering": false,
     "language": {
         "sProcessing": "Procesando...",
@@ -47,6 +48,7 @@
     ]
 });
 
+//Metodo para el filtrado de la tabla al seleccionar una marca del combo
 $("#BrandId").on('change', function () {
     carTable.columns(3).search(this.options[this.selectedIndex].text).draw();
 });

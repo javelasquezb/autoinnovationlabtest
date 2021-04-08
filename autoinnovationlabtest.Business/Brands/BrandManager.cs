@@ -8,15 +8,28 @@ using System.Threading.Tasks;
 
 namespace autoinnovationlabtest.Business.Brands
 {
+    /// <summary>
+    /// Nombre de la clase:BrandManager
+    /// Clase con la implementacion de los metodos para el manejo de datos de Marcas
+    /// </summary>
     public class BrandManager : IBrandManager
     {
+        //Variable para el manejo de datos en base de datos
         private readonly IBrandRepository _brandRepository;
 
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="brandRepository"></param>
         public BrandManager(IBrandRepository brandRepository)
         {
             _brandRepository = brandRepository;
         }
 
+        /// <summary>
+        /// Implementacion del metodo GetAll
+        /// </summary>
+        /// <returns></returns>
         public async Task<Response> GetAll()
         {
             Response result = new Response();

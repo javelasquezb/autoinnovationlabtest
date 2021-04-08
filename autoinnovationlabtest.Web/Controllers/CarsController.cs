@@ -3,7 +3,6 @@ using autoinnovationlabtest.Common.Services.Cars;
 using autoinnovationlabtest.Web.Helpers;
 using autoinnovationlabtest.Web.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using System;
@@ -13,17 +12,34 @@ using System.Threading.Tasks;
 
 namespace autoinnovationlabtest.Web.Controllers
 {
+    /// <summary>
+    /// Nombre del controlador: CarsController
+    /// Controlador para el manejo de todas la paginas o consultas relacionadas con Cars
+    /// </summary>
     public class CarsController : Controller
     {
+        //Variable para interacturar con el servicio
         private readonly ICarService _carServices;
+        //Variable para construir combox
         private readonly IComboHelper _comboHelper;
 
-        public CarsController(IConfiguration configuration, ICarService carServices,IComboHelper comboHelper)
+        /// <summary>
+        /// Constructor de la clase
+        /// </summary>
+        /// <param name="configuration"></param>
+        /// <param name="carServices"></param>
+        /// <param name="comboHelper"></param>
+        public CarsController(IConfiguration configuration,ICarService carServices,IComboHelper comboHelper)
         {
             _carServices = carServices;
             _carServices.UrlBase = configuration.GetValue<string>("UrlApi");
             _comboHelper = comboHelper;
         }
+
+        /// <summary>
+        /// Metodo para retornar la pagina index
+        /// </summary>
+        /// <returns></returns>
         public async Task<IActionResult> Index()
         {
             var model = new CarViewModel
@@ -33,6 +49,10 @@ namespace autoinnovationlabtest.Web.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Metodo para consultar por server side los registros del data table
+        /// </summary>
+        /// <returns></returns>
         [HttpPost]
         public async Task<IActionResult> GetCars()
         {
@@ -65,11 +85,11 @@ namespace autoinnovationlabtest.Web.Controllers
                 int recordsTotal = 0;
                 List<CarViewModel> data = new List<CarViewModel>();
                 var response = await _carServices.GetAll();
-                if(response.IsSucced)
+                if (response.IsSucced)
                 {
                     var cars = JsonConvert.DeserializeObject<List<Car>>(response.Result.ToString());
                     var query = cars.AsQueryable();
-                    if(!string.IsNullOrEmpty(searchBrand))
+                    if (!string.IsNullOrEmpty(searchBrand))
                     {
                         query = query.Where(c => c.Brand == searchBrand);
                     }
@@ -84,12 +104,12 @@ namespace autoinnovationlabtest.Web.Controllers
                         .Skip(skip)
                         .Take(pageSize)
                         .Select(c => new CarViewModel
-                            {
-                                Id = c.Id,
-                                Model = c.Model,
-                                Year = c.Year,
-                                Brand = c.Brand
-                            })
+                        {
+                            Id = c.Id,
+                            Model = c.Model,
+                            Year = c.Year,
+                            Brand = c.Brand
+                        })
                         .ToList();
                 }
 

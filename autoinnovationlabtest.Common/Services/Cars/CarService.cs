@@ -42,7 +42,7 @@ namespace autoinnovationlabtest.Common.Services.Cars
         /// <summary>
         /// Implementacion del metodo GetAllInformation
         /// </summary>
-        /// <param name="car"></param>
+        /// <param name="car">Objeto de tipo Car con el valor del id a consultar</param>
         /// <returns>Objeto de tipo Response</returns>
         public async Task<Response> GetAllInformation(Car car)
         {
