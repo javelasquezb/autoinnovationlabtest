@@ -56,7 +56,7 @@ namespace autoinnovationlabtest.Web.Controllers
                 var searchValue = Request.Form["search[value]"].FirstOrDefault();
 
                 //Search value of brand
-                var searchBrand = Request.Form["columns[1][search][value]"].FirstOrDefault();
+                var searchBrand = Request.Form["columns[3][search][value]"].FirstOrDefault();
 
                 //Paging Size (10, 20, 50,100)  
                 int pageSize = length != null ? Convert.ToInt32(length) : 0;
@@ -76,9 +76,10 @@ namespace autoinnovationlabtest.Web.Controllers
 
                     if (!string.IsNullOrEmpty(searchValue))
                     {
-                        query = query.Where(c => c.Model.Contains(searchValue) || c.Brand.Contains(searchValue));
+                        query = query.Where(c => c.Model.ToLower().Contains(searchValue.ToLower()) || c.Brand.ToLower().Contains(searchValue.ToLower()));
                     }
-                    data = await query
+                    recordsTotal = query.Count();
+                    data = query
                         .OrderBy(c => c.Model)
                         .Skip(skip)
                         .Take(pageSize)
@@ -86,9 +87,10 @@ namespace autoinnovationlabtest.Web.Controllers
                             {
                                 Id = c.Id,
                                 Model = c.Model,
-                                Year = c.Year
+                                Year = c.Year,
+                                Brand = c.Brand
                             })
-                        .ToListAsync();
+                        .ToList();
                 }
 
                 //Returning Json Data  

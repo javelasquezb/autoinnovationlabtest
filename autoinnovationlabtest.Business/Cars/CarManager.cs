@@ -42,7 +42,8 @@ namespace autoinnovationlabtest.Business.Cars
                     {
                         Id = c.Id,
                         Model = c.Model,
-                        Year = c.Year.ToString()
+                        Year = c.Year.ToString(),
+                        Brand = c.Brand.Name
                     }).ToListAsync();
                     result.IsSucced = true;
                 }
