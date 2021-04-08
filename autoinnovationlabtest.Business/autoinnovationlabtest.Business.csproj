@@ -5,6 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\autoinnovationlabtest.Common\autoinnovationlabtest.Common.csproj" />
     <ProjectReference Include="..\autoinnovationlabtest.Data\autoinnovationlabtest.Data.csproj" />
   </ItemGroup>
 

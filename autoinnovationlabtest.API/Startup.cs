@@ -1,16 +1,17 @@
+using autoinnovationlabtest.Business.Cars;
+using autoinnovationlabtest.Data;
+using autoinnovationlabtest.Data.Repositories;
+using autoinnovationlabtest.Data.Repositories.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+using System.IO;
+using System.Reflection;
 
 namespace autoinnovationlabtest.API
 {
@@ -28,9 +29,27 @@ namespace autoinnovationlabtest.API
         {
 
             services.AddControllers();
+            //Configuracion de Base de datos
+            services.AddDbContext<DataContext>(cfg =>
+            {
+                cfg.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"),
+                    sqlServerOptionsAction: sqlOptions =>
+                    {
+                        sqlOptions.EnableRetryOnFailure();
+                    });
+            });
+
+            //Repositories
+            services.AddScoped<ICarRepository,CarRepository>();
+            //Business
+            services.AddScoped<ICarManager,CarManager>();
+
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1",new OpenApiInfo { Title = "autoinnovationlabtest.API",Version = "v1" });
+                c.SwaggerDoc("v1",new OpenApiInfo { Title = "API Auto Innovation Lab Test",Version = "v1" });
+                var xmlFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var xmlPath = Path.Combine(AppContext.BaseDirectory,xmlFile);
+                c.IncludeXmlComments(xmlPath);
             });
         }
 

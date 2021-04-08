@@ -1,0 +1,32 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>autoinnovationlabtest.API</name>
+    </assembly>
+    <members>
+        <member name="T:autoinnovationlabtest.API.Controllers.CarsController">
+            <summary>
+            Nombre del Controlador: CarsController
+            </summary>
+        </member>
+        <member name="M:autoinnovationlabtest.API.Controllers.CarsController.#ctor(autoinnovationlabtest.Business.Cars.ICarManager)">
+            <summary>
+            Constructor de la clase
+            </summary>
+            <param name="carManager"></param>
+        </member>
+        <member name="M:autoinnovationlabtest.API.Controllers.CarsController.GetAll">
+            <summary>
+            Metodo del api para obtener listado de carros.
+            </summary>
+            <returns>Retorna un objeto de tipo IActionResult</returns>
+        </member>
+        <member name="M:autoinnovationlabtest.API.Controllers.CarsController.GetAllInformation(autoinnovationlabtest.Common.Models.Car)">
+            <summary>
+            Metodo para consultar toda la informacion de un  carro
+            </summary>
+            <param name="car">Objeto de la clase Common.Models.Car</param>
+            <returns>Retorna un objeto de tipo IActionResult</returns>
+        </member>
+    </members>
+</doc>
