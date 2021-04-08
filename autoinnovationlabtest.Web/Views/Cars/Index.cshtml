@@ -4,17 +4,44 @@
 }
 
 <div class="row">
-    <h3>Cars</h3>
+    <!-- Column -->
+    <div class="col-lg-12">
+        <div class="card">
+            <div class="card-body">
+                <div class="form-body">
+                    <h4 class="card-title">Carros</h4>
+                    <hr>
+                    <div class="row">
+                        <div class="col-4">
+                            @*<label asp-for="Status" class="col-form-label text-right"></label>
+                            <select asp-for="StatusSelected" asp-items="Model.StatusForFilter" class="form-control"></select>*@
+                        </div>
+                    </div>
+                    <br />
+                    <div class="table-responsive">
+                        <table id="CarsTable" class="table table-bordered table-striped" width="100%">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Id
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Model)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Year)
+                                    </th>
+                                    <th>
+                                    </th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
-<table id="CarsTable" class="table table-bordered table-striped">
-    <thead>
-        <tr>
-            <th>@Html.DisplayNameFor(model => model.Model)</th>
-            <th>@Html.DisplayNameFor(model => model.Year)</th>
-            <th></th>
-        </tr>
-    </thead>
-</table>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}

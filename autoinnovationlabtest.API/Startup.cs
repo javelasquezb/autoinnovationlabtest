@@ -39,6 +39,8 @@ namespace autoinnovationlabtest.API
                     });
             });
 
+            services.AddTransient<SeedDb>();
+
             //Repositories
             services.AddScoped<ICarRepository,CarRepository>();
             //Business
