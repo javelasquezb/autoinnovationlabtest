@@ -1,3 +1,4 @@
+using autoinnovationlabtest.Business.Brands;
 using autoinnovationlabtest.Business.Cars;
 using autoinnovationlabtest.Data;
 using autoinnovationlabtest.Data.Repositories;
@@ -43,8 +44,10 @@ namespace autoinnovationlabtest.API
 
             //Repositories
             services.AddScoped<ICarRepository,CarRepository>();
+            services.AddScoped<IBrandRepository,BrandRepository>();
             //Business
             services.AddScoped<ICarManager,CarManager>();
+            services.AddScoped<IBrandManager,BrandManager>();
 
             services.AddSwaggerGen(c =>
             {

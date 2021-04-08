@@ -4,6 +4,12 @@
         <name>autoinnovationlabtest.API</name>
     </assembly>
     <members>
+        <member name="M:autoinnovationlabtest.API.Controllers.BrandsController.GetAll">
+            <summary>
+            Metodo para obtener listados de Marcas de carros
+            </summary>
+            <returns></returns>
+        </member>
         <member name="T:autoinnovationlabtest.API.Controllers.CarsController">
             <summary>
             Nombre del Controlador: CarsController

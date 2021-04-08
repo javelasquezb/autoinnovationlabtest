@@ -48,7 +48,7 @@ namespace autoinnovationlabtest.Business.Cars
                 }
                 else
                 {
-                    result.Message = "No se conseguieron registros de Carros.";
+                    result.Message = "No se conseguieron datos de Carros.";
                 }
             }
             catch (Exception ex)

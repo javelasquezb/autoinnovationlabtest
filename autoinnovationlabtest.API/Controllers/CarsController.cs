@@ -29,10 +29,7 @@ namespace autoinnovationlabtest.API.Controllers
         /// <returns>Retorna un objeto de tipo IActionResult</returns>
         [HttpGet]
         [Route("api/[controller]")]
-        public async Task<IActionResult> GetAll()
-        {
-            return Ok(await _carManager.GetAll());
-        }
+        public async Task<IActionResult> GetAll() => Ok(await _carManager.GetAll());
 
         /// <summary>
         /// Metodo para consultar toda la informacion de un  carro
@@ -41,9 +38,6 @@ namespace autoinnovationlabtest.API.Controllers
         /// <returns>Retorna un objeto de tipo IActionResult</returns>
         [HttpPost]
         [Route("api/[controller]/getallinformation")]
-        public async Task<IActionResult> GetAllInformation(Car car)
-        {
-            return Ok(await _carManager.GetAllInformation(car));
-        }
+        public async Task<IActionResult> GetAllInformation(Car car) => Ok(await _carManager.GetAllInformation(car));
     }
 }
