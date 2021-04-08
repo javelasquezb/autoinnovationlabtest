@@ -8,7 +8,7 @@ namespace autoinnovationlabtest.Common.Services.Cars
     /// Nombre de la clase: CarService
     /// Clase para implementar los metodos de la interfaz
     /// </summary>
-    public class CarService : ICarServices
+    public class CarService : ICarService
     {
         //Variable de url para conexion a api
         private string _urlBase;

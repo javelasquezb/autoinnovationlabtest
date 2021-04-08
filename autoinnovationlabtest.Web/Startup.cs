@@ -30,7 +30,7 @@ namespace autoinnovationlabtest.Web
 
             //Services
             services.AddScoped<IApiService,ApiService>();
-            services.AddScoped<ICarServices,CarService>();
+            services.AddScoped<ICarService,CarService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

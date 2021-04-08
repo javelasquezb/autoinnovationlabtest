@@ -9,10 +9,16 @@
         /// <summary>
         /// Propiedad que indica el nombre del metodo del api para consultar todos los carros
         /// </summary>
-        public const string WS_GETALLCARS = "api/Cars";
+        public const string WS_GETALLCARS = "Cars";
         /// <summary>
         /// Propiedad que indicar el nombre del metodo del api para consultar toda la informacion de un carro
         /// </summary>
-        public const string WS_GETALLINFORMATIONCARS = "api/Cars/getallinformation";
+        public const string WS_GETALLINFORMATIONCARS = "Cars/getallinformation";
+        /// <summary>
+        /// Propiedad que indica el nombre del metodo del api para consutlar todas las marcas de carro
+        /// </summary>
+        public const string WS_GETALLBRANDS = "Brands";
+
+
     }
 }

@@ -5,9 +5,9 @@ namespace autoinnovationlabtest.Web.Controllers
 {
     public class CarsController : Controller
     {
-        private readonly ICarServices _carServices;
+        private readonly ICarService _carServices;
 
-        public CarsController(ICarServices carServices)
+        public CarsController(ICarService carServices)
         {
             _carServices = carServices;
         }

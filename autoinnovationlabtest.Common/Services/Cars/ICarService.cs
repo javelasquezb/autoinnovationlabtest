@@ -8,7 +8,7 @@ namespace autoinnovationlabtest.Common.Services.Cars
     /// Nombre de la interfaz:ICarServices
     /// Interfaz que posee todos los metodos para conectarse al api
     /// </summary>
-    public interface ICarServices : IUrlBase
+    public interface ICarService : IUrlBase
     {
         /// <summary>
         /// Firma de metodo para consultar todos los registros
