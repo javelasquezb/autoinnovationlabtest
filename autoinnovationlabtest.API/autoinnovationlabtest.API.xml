@@ -4,6 +4,17 @@
         <name>autoinnovationlabtest.API</name>
     </assembly>
     <members>
+        <member name="T:autoinnovationlabtest.API.Controllers.BrandsController">
+            <summary>
+            Controlador de Marcas
+            </summary>
+        </member>
+        <member name="M:autoinnovationlabtest.API.Controllers.BrandsController.#ctor(autoinnovationlabtest.Business.Brands.IBrandManager)">
+            <summary>
+            Consturctor de la clase
+            </summary>
+            <param name="brandManager"></param>
+        </member>
         <member name="M:autoinnovationlabtest.API.Controllers.BrandsController.GetAll">
             <summary>
             Metodo para obtener listados de Marcas de carros

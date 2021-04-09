@@ -1,6 +1,5 @@
-﻿using System;
+﻿using autoinnovationlabtest.Movil.Views;
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace autoinnovationlabtest.Movil
 {
@@ -9,8 +8,8 @@ namespace autoinnovationlabtest.Movil
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+            Startup.Init();
+            MainPage = new CarsPage();
         }
 
         protected override void OnStart()

@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="autoinnovationlabtest.Movil.App">
     <Application.Resources>
-
+        <ResourceDictionary>
+            <x:String x:Key="UrlApi">http://192.168.1.4:45458/api/</x:String>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
