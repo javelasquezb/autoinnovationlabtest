@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Xamarin.Forms;
 
 namespace autoinnovationlabtest.Movil.ViewModels
 {
@@ -11,6 +12,7 @@ namespace autoinnovationlabtest.Movil.ViewModels
     {
 
         #region Attributes
+        public INavigation Navigation { get; set; }
         private readonly ICarService _carService;
         private List<CarItemViewModel> _cars;
         private bool _isRefreshing;
@@ -57,7 +59,7 @@ namespace autoinnovationlabtest.Movil.ViewModels
                 var cars = JsonConvert.DeserializeObject<List<Car>>(response.Result.ToString());
                 Cars = cars
                     .OrderBy(c => c.Model)
-                    .Select(c => new CarItemViewModel
+                    .Select(c => new CarItemViewModel(this.Navigation)
                     {
                         Id = c.Id,
                         Brand = c.Brand,

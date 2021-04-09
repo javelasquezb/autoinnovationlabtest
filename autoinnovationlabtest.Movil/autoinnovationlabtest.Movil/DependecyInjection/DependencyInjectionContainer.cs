@@ -9,11 +9,10 @@ namespace autoinnovationlabtest.Movil.DependecyInjection
     {
         public static IServiceCollection ConfigureServices(this IServiceCollection services)
         {
-            //services.AddSingleton<IMyService,MyService>();
-            //services.AddTransient<SampleViewModel>();
             services.AddScoped<IApiService,ApiService>();
             services.AddScoped<ICarService,CarService>();
             services.AddTransient<CarsViewModel>();
+            services.AddTransient<CarViewModel>();
             return services;
         }
     }

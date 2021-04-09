@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="autoinnovationlabtest.Movil.Views.CarPage">
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Detalles del Carro" HorizontalTextAlignment="Center" TextColor="White" FontSize="24"/>
+        </Frame>
+        <ScrollView>
+            <StackLayout >
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="0" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Modelo:" VerticalOptions="Center" HorizontalOptions="Start"
+                           FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   LineBreakMode="TailTruncation"/>
+                        <Label Text="{Binding Model}" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                           FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   LineBreakMode="TailTruncation"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="1" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Año:" VerticalOptions="Center" HorizontalOptions="Start"
+                           FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   LineBreakMode="TailTruncation"/>
+                        <Label Text="{Binding Year}" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                           FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   LineBreakMode="TailTruncation"/>
+                    </StackLayout>
+                    <StackLayout Grid.Row="2" Orientation="Horizontal" VerticalOptions="CenterAndExpand">
+                        <Label Text="Marca:" VerticalOptions="Center" HorizontalOptions="Start"
+                           FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   LineBreakMode="TailTruncation"/>
+                        <Label Text="{Binding Brand}" VerticalOptions="Center" HorizontalOptions="FillAndExpand"
+                           FontAttributes="Bold"
+                                   FontSize="Medium"
+                                   LineBreakMode="TailTruncation"/>
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

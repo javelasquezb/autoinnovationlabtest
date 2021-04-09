@@ -9,7 +9,7 @@ namespace autoinnovationlabtest.Movil
         {
             InitializeComponent();
             Startup.Init();
-            MainPage = new CarsPage();
+            MainPage = new NavigationPage(new CarsPage());
         }
 
         protected override void OnStart()

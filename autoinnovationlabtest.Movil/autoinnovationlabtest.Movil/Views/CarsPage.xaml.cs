@@ -16,6 +16,7 @@ namespace autoinnovationlabtest.Movil.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            ((CarsViewModel)BindingContext).Navigation = Navigation;
             ((CarsViewModel)BindingContext).Load();
         }
     }
