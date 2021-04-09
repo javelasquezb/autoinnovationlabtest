@@ -17,3 +17,13 @@ Prueba de desarrollo en .Net para la empresa Auto Innovation Labs
     1.- Ir a autoinnovationlabtest.API > appsettings.json y cambiar la etiqueta UrlApi con el valor que entrego la pagina desplegada por el api con el siguiente formato: https//(direccion:puerto)/api/
     2.- Click derecho autoinnovationlabtest.Web > Debug > Start New Instance
     3.- Se desplegara una pagina web con toda la app web de prueba desarrollada
+
+# Para la Ejecucion de la App Movil
+    1.- Instalar Conveyor by Keyoti ( ir a https://marketplace.visualstudio.com/items?itemName=vs-publisher-1448185.ConveyorbyKeyoti y seguir los pasos)
+    2.- Ejecutar el api y deplegar asistente de  Conveyor by Keyoti
+    3.- Obtener los datos de la direccion proporcionada de http
+    4.- Ir a autoinnovationlabtest.Movil > App.xaml y modificar la Key UrlApi con el siguiente formato: http://(direccion):(puerto/api/)
+    5.- Conectar Dispositivo movil
+    6.- Click derecho en el proyecto  autoinnovationlabtest.Movil.Android
+    7.- Ir a Degug > Star New Instance
+    8.- Se instalara y se desplegara la app movil en el dispositivo conecto.
